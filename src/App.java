@@ -11,6 +11,7 @@ public class App {
     int rahat = in.nextInt();
     in.nextLine();
 
+
 //PELIN ALKU
     while (rahat > 0) {
         //Maksu
@@ -32,9 +33,34 @@ public class App {
                 {
                 voitot++;
                 }
-            }
+        }
+        //VOITON LASKEMINEN
+        if (voitot == 1) {
+            System.out.println("Voitit 3$!");
+            rahat += 3;
+        } else if (voitot == 2) {
+            System.out.println("Voitit 5$!");
+            rahat += 5;
+        } else if (voitot == 3) {
+            System.out.println("Voitit 7$ HOLY MAX WIN!!!!");
+            rahat += 7;
         }
 
-        
+        System.out.println("Rahaa jäljellä: " + rahat + "$");
+
+        if (rahat > 0) {
+            System.out.println("Haluatko pelata uudestaan? (Y/N)?");
+            String uudestaan = in.nextLine();
+
+            if (uudestaan.equalsIgnoreCase("n")) {
+                break;
+            }
+        }
+   
+    }
+
+    System.out.println("Peli päättyi, sinulle jäi " + rahat + "$");
+
+
     }
 }
